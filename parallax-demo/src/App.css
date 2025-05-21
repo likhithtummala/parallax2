@@ -1,0 +1,41 @@
+/* src/App.css */
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.after-parallax {
+  position: relative;
+  z-index: 2;              /* over the fixed parallax layers */
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.after-parallax::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.25) 100%
+  );
+}
+.content-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+.content-wrapper button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
